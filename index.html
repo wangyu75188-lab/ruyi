@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7f2" />
+  <meta name="description" content="用几分钟关注最近的自己。轻松、温和的情绪与压力自我觉察小测验。" />
+  <title>心晴 · 给自己一点时间</title>
+  <style>
+    :root{--ink:#24352f;--muted:#75827a;--green:#456e5c;--green-dark:#315443;--mint:#e7efe8;--cream:#f6f7f2;--peach:#f1d9c8;--white:#fff;--line:#e6e9e2;--shadow:0 20px 60px rgba(43,67,54,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}button{font:inherit}a{color:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:750;font-size:21px;letter-spacing:-.04em}.brand-mark{width:34px;height:34px;display:grid;place-items:center;background:var(--green);color:white;border-radius:12px;font-size:19px}.nav-note{font-size:13px;color:var(--muted)}
+    .hero{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:48px;align-items:center;padding:76px 0 84px;min-height:570px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:700;font-size:13px;letter-spacing:.08em}.eyebrow:before{content:"";width:20px;height:1px;background:var(--green)}h1{font-size:clamp(44px,6vw,72px);line-height:1.08;letter-spacing:-.065em;margin:19px 0 20px;font-weight:720}.hero p{font-size:17px;color:#68776e;max-width:470px;margin:0 0 30px}.button{border:0;border-radius:999px;padding:15px 25px;background:var(--green);color:white;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 8px 18px rgba(69,110,92,.18)}.button:hover{background:var(--green-dark);transform:translateY(-2px)}.button:focus-visible,.option:focus-visible,.text-button:focus-visible{outline:3px solid #a6c8b1;outline-offset:3px}.hero-meta{margin-top:18px;font-size:12px;color:#929b94}.art{height:390px;position:relative;display:grid;place-items:center}.sun{position:absolute;width:270px;height:270px;background:#eddfbd;border-radius:50%;top:24px;right:60px}.blob{position:absolute;width:310px;height:230px;background:#c9d9cc;border-radius:48% 52% 45% 55%/55% 41% 59% 45%;bottom:18px;left:25px;transform:rotate(-12deg)}.plant{position:absolute;z-index:2;bottom:40px;right:50px;width:175px;height:175px}.pot{position:absolute;bottom:0;left:43px;width:90px;height:73px;background:#d88f6d;clip-path:polygon(5% 0,95% 0,82% 100%,18% 100%);border-radius:8px}.stem{position:absolute;bottom:60px;left:86px;width:4px;height:122px;background:#52765e;transform:rotate(8deg);border-radius:5px}.leaf{position:absolute;width:55px;height:29px;background:#61876b;border-radius:100% 0 100% 0}.leaf.one{bottom:134px;left:39px;transform:rotate(20deg)}.leaf.two{bottom:157px;left:83px;transform:rotate(-43deg) scaleX(-1)}.leaf.three{bottom:105px;left:86px;transform:rotate(-25deg) scaleX(-1)}.leaf.four{bottom:119px;left:29px;transform:rotate(22deg)}.art-card{position:absolute;z-index:3;left:0;top:118px;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);padding:17px 20px;border-radius:17px;box-shadow:var(--shadow);font-size:13px;color:#718077}.art-card strong{display:block;color:var(--ink);font-size:15px;margin-bottom:3px}.spark{position:absolute;top:75px;left:90px;color:#d2936f;font-size:25px}
+    .section{padding:42px 0 86px}.section-head{text-align:center;margin-bottom:34px}.section-head .eyebrow{justify-content:center}.section-head h2{font-size:32px;letter-spacing:-.04em;margin:12px 0 7px}.section-head p{margin:0;color:var(--muted)}.test-card{max-width:800px;margin:auto;background:white;border:1px solid #edf0e9;border-radius:26px;padding:34px;box-shadow:var(--shadow)}.test-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:21px}.tag{padding:6px 11px;background:var(--mint);color:var(--green);border-radius:999px;font-weight:700;font-size:12px}.duration{color:var(--muted);font-size:13px}.progress-track{height:5px;background:#eef0eb;border-radius:8px;overflow:hidden;margin-bottom:28px}.progress-fill{height:100%;width:0;background:var(--green);transition:width .3s}.question{font-size:23px;line-height:1.45;letter-spacing:-.025em;margin:0 0 7px}.q-hint{font-size:13px;color:var(--muted);margin:0 0 21px}.options{display:grid;gap:10px}.option{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:white;color:var(--ink);cursor:pointer;transition:.18s}.option:hover{border-color:#a8c0ac;background:#fbfdfb}.option.selected{border-color:var(--green);background:#f1f6f1}.radio{width:18px;height:18px;flex:none;border:1.5px solid #c5cec6;border-radius:50%;display:grid;place-items:center}.selected .radio{border-color:var(--green)}.selected .radio:after{content:"";width:9px;height:9px;border-radius:50%;background:var(--green)}.option-text{flex:1}.q-foot{display:flex;align-items:center;justify-content:space-between;margin-top:24px}.text-button{border:0;background:none;color:var(--muted);font-weight:650;cursor:pointer;padding:10px 0}.text-button:disabled{opacity:.35;cursor:not-allowed}.next-button{padding:12px 22px}.start-state{text-align:center;padding:8px 0}.start-icon{width:60px;height:60px;border-radius:20px;background:#f3eee1;color:#987b4d;margin:0 auto 17px;display:grid;place-items:center;font-size:25px}.start-state h3{font-size:24px;margin:0 0 8px;letter-spacing:-.03em}.start-state p{color:var(--muted);max-width:490px;margin:0 auto 22px}.privacy{font-size:12px;color:#929b94;margin:15px 0 0}.hidden{display:none!important}.result{padding:12px 2px 2px}.result-kicker{font-size:13px;color:var(--green);font-weight:700}.result h3{font-size:30px;letter-spacing:-.04em;margin:8px 0 10px}.result p{color:#66746c}.result-box{border-radius:16px;background:#f4f7f2;padding:19px 20px;margin:20px 0}.result-box strong{display:block;margin-bottom:5px}.result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.secondary{background:white;color:var(--green);border:1px solid #dce5dc;box-shadow:none}.disclaimer{max-width:800px;margin:20px auto 0;color:#8b958d;font-size:12px;line-height:1.7;text-align:center}.footer{border-top:1px solid var(--line);padding:25px 0 34px;color:#879188;font-size:12px;display:flex;justify-content:space-between;gap:20px}.footer strong{color:var(--green)}
+    @media(max-width:760px){.wrap{width:min(100% - 32px,560px)}.nav{height:68px}.nav-note{font-size:11px}.hero{grid-template-columns:1fr;padding:45px 0 48px;gap:12px;min-height:0}.hero-copy{position:relative;z-index:4}.hero p{font-size:15px}.art{height:270px;max-width:440px;width:100%;margin:auto}.sun{width:200px;height:200px;right:40px;top:8px}.blob{width:240px;height:170px;left:18px;bottom:9px}.plant{transform:scale(.75);transform-origin:bottom right;right:30px;bottom:24px}.art-card{top:73px;left:6px;padding:12px 15px}.spark{left:60px;top:33px}.section{padding:35px 0 62px}.section-head h2{font-size:27px}.test-card{padding:22px 18px;border-radius:21px}.question{font-size:20px}.option{padding:13px}.footer{flex-direction:column;gap:5px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav"><a class="brand" href="#top" aria-label="心晴首页"><span class="brand-mark">晴</span>心晴</a><span class="nav-note">慢一点，也没关系</span></header>
+  <main id="top">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><span class="eyebrow">A MOMENT FOR YOU</span><h1 id="hero-title">给自己<br>一点时间。</h1><p>忙着照顾生活的时候，也别忘了听听自己的心情。用几分钟，温柔地了解最近的状态。</p><button class="button" id="heroStart">开始自我觉察 <span aria-hidden="true">→</span></button><div class="hero-meta">约 2 分钟 · 无需注册 · 结果仅自己可见</div></div>
+      <div class="art" aria-hidden="true"><div class="sun"></div><div class="blob"></div><span class="spark">✳</span><div class="art-card"><strong>此刻的你，值得被倾听</strong>不必急着找到所有答案。</div><div class="plant"><i class="stem"></i><i class="leaf one"></i><i class="leaf two"></i><i class="leaf three"></i><i class="leaf four"></i><i class="pot"></i></div></div>
+    </section>
+    <section class="section" id="checkin" aria-labelledby="section-title"><div class="wrap"><div class="section-head"><span class="eyebrow">GENTLE CHECK-IN</span><h2 id="section-title">最近的你，还好吗？</h2><p>没有标准答案，按照真实感受选择就好。</p></div>
+      <div class="test-card"><div class="test-top"><span class="tag">情绪与压力 · 自我觉察</span><span class="duration" id="duration">约 2 分钟</span></div><div id="startState" class="start-state"><div class="start-icon" aria-hidden="true">☼</div><h3>先深呼吸一下</h3><p>接下来有 8 个小问题，请回想<strong>过去两周</strong>的感受。你的回答不会被保存或发送。</p><button class="button" id="begin">开始测一测 <span aria-hidden="true">→</span></button><div class="privacy">这是一份自我觉察练习，不是诊断或医疗建议。</div></div>
+        <div id="quiz" class="hidden" aria-live="polite"><div class="progress-track" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div><p class="question" id="question"></p><p class="q-hint">过去两周，你有多常有这样的感受？</p><div class="options" id="options"></div><div class="q-foot"><button class="text-button" id="back">← 上一题</button><span class="duration" id="counter"></span><button class="button next-button" id="next" disabled>下一题 →</button></div></div>
+        <div id="result" class="result hidden" aria-live="polite"></div>
+      </div>
+      <p class="disclaimer">本测验仅用于日常情绪自我觉察，问题和结果不能用于诊断、筛查或替代专业评估。如果你持续感到痛苦、影响日常生活，请考虑联系心理健康专业人士或可信任的人；若你正处于紧急危险中，请立即联系当地急救或危机支持服务。</p>
+    </div></section>
+  </main>
+  <footer class="wrap footer"><span><strong>心晴</strong> · 认真感受，也好好生活</span><span>关照自己，是一件值得练习的事。</span></footer>
+<script>
+  const questions=[
+    '我感到紧张、焦虑，或很难让自己放松下来。',
+    '我觉得事情很多，难以应付眼前的任务。',
+    '我对平时喜欢或在意的事情，提不起兴趣。',
+    '我感到疲惫，即使休息后也不太容易恢复。',
+    '我会因为小事烦躁，或发现自己比平时更容易发脾气。',
+    '我觉得难以专注，思绪常常飘走。',
+    '我感到孤单，或觉得身边的人不太理解我。',
+    '我能找到一些让自己感到平静、安心的时刻。'
+  ];
+  const choices=['几乎没有','偶尔','有时','经常'];
+  let answers=Array(questions.length).fill(null), current=0;
+  const startState=document.getElementById('startState'),quiz=document.getElementById('quiz'),result=document.getElementById('result');
+  const begin=()=>{startState.classList.add('hidden');result.classList.add('hidden');quiz.classList.remove('hidden');current=0;renderQuestion();document.getElementById('checkin').scrollIntoView({behavior:'smooth',block:'center'});};
+  document.getElementById('begin').addEventListener('click',begin);
+  document.getElementById('heroStart').addEventListener('click',()=>{document.getElementById('checkin').scrollIntoView({behavior:'smooth'});setTimeout(()=>document.getElementById('begin').focus(),350)});
+  function renderQuestion(){
+    document.getElementById('question').textContent=questions[current];
+    document.getElementById('counter').textContent=`${current+1} / ${questions.length}`;
+    document.getElementById('back').disabled=current===0;
+    const progress=(current/questions.length)*100;
+    document.getElementById('progressFill').style.width=`${progress}%`;
+    document.querySelector('[role="progressbar"]').setAttribute('aria-valuenow',current);
+    const options=document.getElementById('options');options.replaceChildren();
+    choices.forEach((choice,index)=>{const button=document.createElement('button');button.type='button';button.className='option'+(answers[current]===index?' selected':'');button.setAttribute('aria-pressed',answers[current]===index?'true':'false');button.innerHTML='<span class="radio" aria-hidden="true"></span><span class="option-text"></span>';button.querySelector('.option-text').textContent=choice;button.addEventListener('click',()=>{answers[current]=index;renderQuestion();document.getElementById('next').focus()});options.append(button)});
+    const next=document.getElementById('next');next.disabled=answers[current]===null;next.textContent=current===questions.length-1?'查看我的小结 →':'下一题 →';
+  }
+  document.getElementById('next').addEventListener('click',()=>{if(answers[current]===null)return;if(current<questions.length-1){current++;renderQuestion()}else showResult()});
+  document.getElementById('back').addEventListener('click',()=>{if(current>0){current--;renderQuestion()}});
+  function showResult(){
+    const score=answers.reduce((sum,value,index)=>sum+((index===7)?3-value:value),0);
+    let title,body,tip;
+    if(score<=7){title='你似乎保有一些余裕';body='从你的回答看，最近的压力和低落感可能不算突出，也许你已经找到了一些照顾自己的方式。即便如此，偶尔停下来休息依然很重要。';tip='留意那些让你感觉安稳的小事，把它们留在生活里；也可以给自己安排一段不需要完成任何事的时间。'}
+    else if(score<=15){title='最近可能有些不容易';body='你的回答显示，近来或许有一些压力、疲惫或情绪起伏。试着不责怪自己，先从一件小小的、能让生活轻一点的事开始。';tip='选一件最容易做到的事：和信任的人聊聊、短暂散步、规律吃饭，或把手头的事拆成更小的一步。'}
+    else{title='你可能正承受不少';body='你的回答提示，最近的负担也许比较重。这个结果不是诊断，也不代表你必须独自应对。你的感受值得认真对待，可以考虑向可信任的人或专业人士寻求支持。';tip='先暂停一下，做几次缓慢呼吸。若这种感受持续、加重或影响生活，请联系当地心理健康专业人士；如有即时危险，请联系当地急救或危机支持服务。'}
+    quiz.classList.add('hidden');result.classList.remove('hidden');document.getElementById('duration').textContent='自我觉察小结';
+    result.innerHTML=`<span class="result-kicker">YOUR CHECK-IN · 仅供自我觉察</span><h3>${title}</h3><p>${body}</p><div class="result-box"><strong>给自己的一个小建议</strong><span>${tip}</span></div><p style="font-size:12px">这不是临床量表或诊断工具。分数仅用于生成这段非诊断性提示，请以自己的真实感受为准。</p><div class="result-actions"><button class="button" id="retry">再做一次</button><button class="button secondary" id="home">回到首页</button></div>`;
+    document.getElementById('retry').addEventListener('click',()=>{answers=Array(questions.length).fill(null);document.getElementById('duration').textContent='约 2 分钟';begin()});
+    document.getElementById('home').addEventListener('click',()=>{result.classList.add('hidden');startState.classList.remove('hidden');document.getElementById('duration').textContent='约 2 分钟';document.getElementById('top').scrollIntoView({behavior:'smooth'})});
+    result.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+</script>
+</body>
+</html>
